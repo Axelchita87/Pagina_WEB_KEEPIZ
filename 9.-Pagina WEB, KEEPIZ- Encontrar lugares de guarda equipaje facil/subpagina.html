@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="contenedor-body2">
+
+
+		<header>
+
+			<div class="contenedor-header">
+
+				<div class="header-logo">
+
+					<a href="index.html">
+
+						<img src="imagenesCeyennes/logo3_3.png" class="logo" alt="logo Keepiz"> </a>
+				</div>
+
+				<nav>
+
+					<div class="contenedornav">
+
+						<div class="dropdown">
+
+							<button class="dropbtnacerca" onclick="myFunction()">Acerca de Keepiz
+								<i class="fa fa-caret-down"></i>
+
+								<span class="caret"></span>
+							</button>
+
+							<div class="dropdown-content" id="myDropdown1">
+
+								<a href="index.html#idcomofunciona">Como funciona?</a>
+
+								<a href="index.html#prices-conditions">Precios y condiciones</a>
+
+								<a href="#">Descarga la app</a>
+
+								<a href="#">Contacto</a>
+
+								<a href="#">FAQ</a>
+							</div>
+						</div>
+
+
+						<div class="dropdown">
+
+							<button class="dropbtnbuscar" onclick="myFunction()">Buscar consigna
+								<i class="fa fa-caret-down"></i>
+
+								<span class="caret"></span>
+							</button>
+
+							<div class="dropdown-content" id="myDropdown2">
+
+								<a href="#">Consigna de barrio</a>
+
+								<a href="#">Consigna movil</a>
+							</div>
+						</div>
+
+						<div class="dropdown">
+
+							<button class="dropbtnperfil" onclick="myFunction()">Perfil de usuario
+								<i class="fa fa-caret-down"></i>
+
+								<span class="caret"></span>
+							</button>
+
+							<div class="dropdown-content" id="myDropdown3">
+
+								<a href="#">Iniciar secion</a>
+							</div>
+						</div>
+
+						<div class="dropdown">
+
+							<button class="dropbtnacceso" href="#" onclick="myFunction()">Keeper
+								<i class="fa fa-caret-down"></i>
+							</button>
+						</div>
+
+						<div class="dropdown">
+
+							<button class="dropbtnservicios" href="#" onclick="myFunction()">Servicios extra
+								<i class="fa fa-caret-down"></i>
+							</button>
+						</div>
+
+						<div class="dropdown">
+
+							<button class="dropbtnidioma" onclick="myFunction()">
+
+								<img src=" ../imagenesCeyennes/estadosunidos.png" alt="">
+								<span class="caret"></span>
+							</button>
+
+
+							<div class="dropdown-content" id="myDropdown4">
+
+								<a href="#">Consigna de barrio</a>
+
+								<a href="#">Consigna movil</a>
+							</div>
+						</div>
+
+					</div>
+				</nav>
+			</div>
+
+			<div class="hero">
+
+			</div>
+		</header>
+
+
+		<div class="container-subpagina landing ng-scope" ng-controller="FormConsignaCtrl" ng-init="changeLuggageType(0)" id="FormConsignaCtrl">
+
+			<div class="row mb-30">
+				<!-- CITY IMAGES AND TEXTS-->
+				<div class="col-xs-12 col-sm-4 col-md-3 logo-city-box">
+					<img src="imagenesCeyennes/logo-ciudad-de-mexico.png" alt="Keepiz en Ciudad de Mexico">
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-9 text-landing">
+					<p></p>
+					<h1>Consignas de equipaje donde dejar las maletas en Ciudad de Mexico</h1>
+					<p></p>
+					<p>En Keepiz disponemos de una amplia variedad de consignas en CDMX para que puedas dejar tus maletas con total confianza.
+						Utilizamos los almacenes de comercios locales situados en el centro de CDMX y alrededores, facilitando la consigna
+						de tu equipaje de forma cómoda y segura.
+						<br>A día de hoy contamos con más de 35 Keepers repartidos por la ciudad, para que siempre tengas un sitio cerca donde
+						guardar las maletas en Madrid</p>
+					<p>Reserva tu consigna más cercana, entrega tus maletas o bultos, y disfruta sin complicaciones.</p>
+				</div>
+			</div>
+
+			<div class="info-left-luggage fs-30 text-center mb-10 hidden-xs hidden-sm" title="Entrega y recogida en la misma consigna.">
+				Consigna de barrio
+				<img class="info-icon" src="https://www.keepiz.com/img/question-mark.png" alt="info">
+			</div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3 class="modal-title" id="exampleModalLabel">Consigna de barrio</h3>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							Entrega y recogida en la misma consigna.
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="form-consigna mb-20">
+				<div class="rowconsignabarrio">
+					<!--================================= 1 =================================-->
+					<div class="col-md-2-flecha ">
+						<label for="nbultos" class="lab">
+							<div class="numberCircle">1</div>
+							Número de bultos
+						</label>
+						<br>
+						<select ng-model="bultos" ng-change="setBultos(bultos)" name="nbultos" id="nbultos" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+							<option value="1" selected="selected">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
+							<option value="32">32</option>
+							<option value="33">33</option>
+							<option value="34">34</option>
+							<option value="35">35</option>
+							<option value="36">36</option>
+							<option value="37">37</option>
+							<option value="38">38</option>
+							<option value="39">39</option>
+							<option value="40">40</option>
+							<option value="41">41</option>
+							<option value="42">42</option>
+							<option value="43">43</option>
+							<option value="44">44</option>
+							<option value="45">45</option>
+							<option value="46">46</option>
+							<option value="47">47</option>
+							<option value="48">48</option>
+							<option value="49">49</option>
+							<option value="50">50</option>
+						</select>
+					</div>
+
+
+					<!--================================= 2 =================================-->
+					<div class="col-md-3-fecha">
+						<label for="fecha-entrega">
+							<div class="numberCircle">2</div>
+							Cuando lo quieres entregar:
+						</label>
+						<div class="input-group date" id="datetime_drop">
+							<input id="dropDate" type="text" readonly="readonly" class="form-control calendar ng-pristine ng-untouched ng-valid ng-empty backcal"
+							 ng-class="{'input-error':!isDateSet() &amp;&amp; currentKeeper || invalidData == true}" name="fecha-entrega" placeholder="Seleccione Fecha y Hora"
+							 ng-model="fechaEntrega" ng-value="dateEntrega">
+
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>
+
+
+					<!--================================= 3 =================================-->
+					<div class="col-md-3-fecha">
+						<label for="fecha-recogida">
+							<div class="numberCircle">3</div>
+							Cuando lo quieres recoger:
+						</label>
+
+						<div class="input-group date" id="datetime_pickup">
+							<input id="pickDate" type="text" readonly="readonly" class="form-control calendar ng-pristine ng-untouched ng-valid ng-empty backcal"
+							 ng-class="{'input-error':!isDateSet() &amp;&amp; currentKeeper || invalidData == true}" name="fecha-recogida" placeholder="Seleccione Fecha y Hora"
+							 ng-model="fechaRecogida" ng-value="dateRecogida">
+
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+						<!-- ngIf: invalidData == true -->
+					</div>
+
+
+					<!--================================= 4 =================================-->
+					<div class="col-md-3-fecha">
+						<label for="autocomplete">
+							<div class="numberCircle">4</div>
+							Busca un Keeper en el mapa
+						</label>
+						<input class="form-control autocomplete" type="text" ng-value="autocompleteDrop" name="autocomplete" id="autocomplete" placeholder="o busca por aquí una dirección"
+						 autocomplete="off">
+					</div>
+
+
+					<!-- ngIf: showPrice -->
+				</div>
+
+
+
+
+
+				<!-- info text-->
+				<div class="rowspm">
+					<div class="col-md-12 advice-small">
+						<span>El servicio de consigna se tiene que
+							<span class="label-red">reservar y pagar en línea</span>. El Keeper rechazará cualquier pedido que no se haya reservado en línea.</span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-3">
+						<!-- ngIf: showBookButton() -->
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="rowmobil text-right mb-20 mobile-center">
+				<div class="col-xs-12 col-md-10">
+					<img src="https://www.keepiz.com/img/hand.png" alt="tip"> ¿Quieres recogerlo en un punto diferente al de entrega?
+
+					<div class="tip-arrows hidden-xs hidden-sm">&gt;&gt;</div>
+				</div>
+
+				<div id="redirect" class="col-xs-12 col-md-2 text-right">
+					<a href="https://www.keepiz.com/es/consignas-movil-madrid" class="change-luggage">Consigna móvil</a>
+				</div>
+			</div>
+
+			<consigna-map city="MADRID" poi="" class="col-md-12 consigna-map ng-isolate-scope">
+				<div class="rowmapa">
+					<div class="col-md-12">
+						<p>Haz clic en la bandera de tu Keeper para reservarlo y completar el pedido.</p>
+					</div>
+				</div>
+
+				<div class="map-container ng-scope" ng-controller="ConsignaCtrl" ng-init="initMap()">
+					<!-- ngIf: loadingMap -->
+
+					<div id="map" style="position: relative; overflow: hidden;">
+						<div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+							<div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;">
+								<div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;">
+									<div style="z-index: 1; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);">
+										<div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;">
+											<div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
+												<div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -112, -205);">
+													<div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 256px; top: 512px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 0px; top: 512px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: -256px; top: 512px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: -512px; top: 512px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: -512px; top: 256px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: -512px; top: 0px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: -512px; top: -256px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 512px; top: -256px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 512px; top: 0px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 512px; top: 256px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 512px; top: 512px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: -512px; top: -512px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: -256px; top: -512px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 0px; top: -512px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 256px; top: -512px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+													<div style="position: absolute; left: 512px; top: -512px; width: 256px; height: 256px;">
+														<div style="width: 256px; height: 256px;"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div>
+										<div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div>
+										<div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;">
+											<div style="position: absolute; left: 0px; top: 0px; z-index: -1;">
+												<div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -112, -205);">
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 256px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 256px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 0px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 0px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 256px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 512px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 512px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 512px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: 512px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: 256px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: 0px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: -256px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: -256px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: -256px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: -256px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: -256px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: 0px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: 256px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: 512px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: -512px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: -512px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: -512px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: -512px;"></div>
+													<div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: -512px;"></div>
+												</div>
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 27px; top: -21px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 91px; top: -98px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 114px; top: 108px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 96px; top: 41px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 18px; top: -74px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -4px; top: -175px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 44px; top: -120px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -103px; top: -95px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -98px; top: 277px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 24px; top: -243px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -46px; top: 122px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 25px; top: -193px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -45px; top: -121px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -91px; top: -326px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -82px; top: -133px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 107px; top: 58px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 60px; top: 8px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 78px; top: -130px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 9px; top: 44px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -47px; top: -33px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 25px; top: -114px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -54px; top: -70px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 129px; top: -405px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -80px; top: -190px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 4px; top: -12px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 75px; top: -153px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -63px; top: -181px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 313px; top: -184px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 106px; top: -148px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 195px; top: -221px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 162px; top: -14px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -21px; top: -101px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -63px; top: -22px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -22px; top: -37px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: -31px; top: 149px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div style="width: 23px; height: 42px; overflow: hidden; position: absolute; left: 15px; top: -146px; z-index: 10;">
+												<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; width: 23px; height: 42px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+										</div>
+										<div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
+											<div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -112, -205);">
+												<div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8023!3i6178!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=112006"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8022!3i6178!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=114487"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8022!3i6177!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=72855"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8023!3i6177!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=70374"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8024!3i6177!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=67893"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8024!3i6178!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=109525"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 256px; top: 512px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8024!3i6179!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=20086"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 0px; top: 512px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8023!3i6179!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=22567"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: -256px; top: 512px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8022!3i6179!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=25048"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: -512px; top: 512px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8021!3i6179!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=27529"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: -512px; top: 256px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8021!3i6178!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=116968"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: -512px; top: 0px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8021!3i6177!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=75336"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: -512px; top: -256px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8021!3i6176!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=33704"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8022!3i6176!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=31223"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8023!3i6176!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=28742"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8024!3i6176!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=26261"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 512px; top: -256px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8025!3i6176!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=23780"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 512px; top: 0px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8025!3i6177!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=65412"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 512px; top: 256px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8025!3i6178!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=107044"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 512px; top: 512px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8025!3i6179!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=17605"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: -512px; top: -512px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8021!3i6175!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=123143"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: -256px; top: -512px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8022!3i6175!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=120662"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 0px; top: -512px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8023!3i6175!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=118181"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 256px; top: -512px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8024!3i6175!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=115700"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+												<div style="position: absolute; left: 512px; top: -512px; width: 256px; height: 256px;">
+													<img draggable="false" alt="" src="https://maps.google.com/maps/vt?pb=!1m5!1m4!1i14!2i8025!3i6175!4i256!2m3!1e0!2sm!3i424123980!3m14!2ses-419!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy50OjJ8cC52Om9mZixzLnQ6NHxwLnY6b2Zm!4e0!23i1301875&amp;token=113219"
+													 style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0; transition-duration: 0.8s;">
+										<p class="gm-style-pbt">Utiliza la tecla Ctrl junto con la rueda de desplazamiento del mouse para acercar o alejar el mapa</p>
+									</div>
+									<div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;">
+										<div style="z-index: 1; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px;"></div>
+										<div style="z-index: 4; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);">
+											<div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div>
+											<div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div>
+											<div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;">
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 27px; top: -21px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap72" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap72" id="gmimap72">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Apartamentos Trendi" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 91px; top: -98px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap73" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap73" id="gmimap73">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Árbol shop" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 114px; top: 108px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap74" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap74" id="gmimap74">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Autoescuela Lara Atocha" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 96px; top: 41px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap75" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap75" id="gmimap75">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Autoescuela Lara Huertas" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 18px; top: -74px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap76" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap76" id="gmimap76">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Autoescuela Lara Montera" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -4px; top: -175px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap77" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap77" id="gmimap77">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Bendita tentación" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 44px; top: -120px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap78" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap78" id="gmimap78">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Blonde Concept" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -103px; top: -95px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap79" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap79" id="gmimap79">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Bluster Souvenirs" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -98px; top: 277px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap80" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap80" id="gmimap80">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Bolsos Mary" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 24px; top: -243px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap81" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap81" id="gmimap81">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="&quot;casa Julian&quot;" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -46px; top: 122px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap82" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap82" id="gmimap82">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Concedete un deseo" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 25px; top: -193px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap83" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap83" id="gmimap83">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="DAdá For kids" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -45px; top: -121px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap84" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap84" id="gmimap84">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="DINERO MOVIL" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -91px; top: -326px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap85" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap85" id="gmimap85">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Don Lector" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -82px; top: -133px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap86" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap86" id="gmimap86">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="ECOPLANET WAY" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 107px; top: 58px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap87" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap87" id="gmimap87">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="El Campesino Burger" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 60px; top: 8px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap88" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap88" id="gmimap88">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Foodking" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 78px; top: -130px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap89" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap89" id="gmimap89">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Frutas Prohibidas - Juice Smoothie Coffee -" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 9px; top: 44px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap90" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap90" id="gmimap90">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Gash Market" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -47px; top: -33px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap91" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap91" id="gmimap91">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Gracias-mamá" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 25px; top: -114px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap92" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap92" id="gmimap92">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="*in moss" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -54px; top: -70px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap93" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap93" id="gmimap93">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="La Ciudad Invisible" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 129px; top: -405px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap94" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap94" id="gmimap94">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="la tienda de almudena" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -80px; top: -190px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap95" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap95" id="gmimap95">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Macanudo Bar Espacio Arte" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 4px; top: -12px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap96" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap96" id="gmimap96">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Minty Host" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 75px; top: -153px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap97" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap97" id="gmimap97">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Nawalis" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -63px; top: -181px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap98" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap98" id="gmimap98">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Papeleria Prensa Madriz" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 313px; top: -184px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap99" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap99" id="gmimap99">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="PERFUMARTE" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 106px; top: -148px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap100" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap100" id="gmimap100">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="PIPPA'S" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 195px; top: -221px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap101" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap101" id="gmimap101">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="R'difusión" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 162px; top: -14px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap102" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap102" id="gmimap102">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Rent &amp; Roll" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -21px; top: -101px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap103" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap103" id="gmimap103">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="salumon" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -63px; top: -22px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap104" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap104" id="gmimap104">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Segway Trip" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -22px; top: -37px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap105" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap105" id="gmimap105">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Select Management Spain" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: -31px; top: 149px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap106" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap106" id="gmimap106">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Trendy and purse" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+												<div class="gmnoprint" style="width: 23px; height: 42px; overflow: hidden; position: absolute; opacity: 0.01; left: 15px; top: -146px; z-index: 10;">
+													<img alt="" src="/img/banderita-recta-derecha.png" draggable="false" usemap="#gmimap107" style="position: absolute; left: 0px; top: 0px; width: 23px; height: 42px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+													<map name="gmimap107" id="gmimap107">
+														<area log="miw" coords="0,0,0,42,23,42,23,0" shape="poly" title="Yk accesorios" style="cursor: pointer; touch-action: none;">
+													</map>
+												</div>
+											</div>
+											<div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div>
+										</div>
+									</div>
+								</div>
+								<iframe frameborder="0" src="about:blank" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;"></iframe>
+								<div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;">
+									<a target="_blank" href="https://maps.google.com/maps?ll=40.416848,-3.703787&amp;z=14&amp;t=m&amp;hl=es-419&amp;gl=US&amp;mapclient=apiv3"
+									 title="Haz clic para ver esta área en Google Maps" style="position: static; overflow: visible; float: none; display: inline;">
+										<div style="width: 66px; height: 26px; cursor: pointer;">
+											<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/google_white5.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;">
+										</div>
+									</a>
+								</div>
+								<div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 320px; top: 387px;">
+									<div style="padding: 0px 0px 10px; font-size: 16px;">Datos del mapa</div>
+									<div style="font-size: 13px;">Datos del mapa ©2018 Google, Inst. Geogr. Nacional</div>
+									<div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;">
+										<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+									</div>
+								</div>
+								<div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 259px; bottom: 0px; width: 245px;">
+									<div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px;">
+										<div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
+											<div style="width: 1px;"></div>
+											<div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div>
+										</div>
+										<div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;">
+											<a style="text-decoration: none; cursor: pointer; display: none;">Datos del mapa</a>
+											<span>Datos del mapa ©2018 Google, Inst. Geogr. Nacional</span>
+										</div>
+									</div>
+								</div>
+								<div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;">
+									<div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Datos del mapa ©2018 Google, Inst. Geogr. Nacional</div>
+								</div>
+								<div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; user-select: none; height: 14px; line-height: 14px; position: absolute; right: 139px; bottom: 0px;">
+									<div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
+										<div style="width: 1px;"></div>
+										<div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div>
+									</div>
+									<div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;">
+										<a href="https://www.google.com/intl/es-419_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Condiciones del servicio</a>
+									</div>
+								</div>
+								<button draggable="false" title="Activar o desactivar la vista de pantalla completa" aria-label="Activar o desactivar la vista de pantalla completa"
+								 type="button" style="background: none rgb(255, 255, 255); border: 0px; margin: 10px 14px; padding: 0px; position: absolute; cursor: pointer; user-select: none; width: 25px; height: 25px; overflow: hidden; top: 0px; right: 0px;">
+									<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/sv9.png" draggable="false" class="gm-fullscreen-control"
+									 style="position: absolute; left: -52px; top: -86px; width: 164px; height: 175px; user-select: none; border: 0px; padding: 0px; margin: 0px;">
+								</button>
+								<div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;">
+									<div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
+										<div style="width: 1px;"></div>
+										<div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div>
+									</div>
+									<div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;">
+										<a target="_blank" rel="noopener" title="Informar a Google errores en las imágenes o el mapa de carreteras." href="https://www.google.com/maps/@40.416848,-3.703787,14z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3"
+										 style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Informar un error en el mapa</a>
+									</div>
+								</div>
+								<div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" draggable="false" controlwidth="28" controlheight="93"
+								 style="margin: 10px; user-select: none; position: absolute; bottom: 107px; right: 28px;">
+									<div class="gmnoprint" controlwidth="28" controlheight="55" style="position: absolute; left: 0px; top: 38px;">
+										<div draggable="false" style="user-select: none; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; background-color: rgb(255, 255, 255); width: 28px; height: 55px;">
+											<button draggable="false" title="Acercar" aria-label="Acercar" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;">
+												<div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;">
+													<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;">
+												</div>
+											</button>
+											<div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; background-color: rgb(230, 230, 230); top: 0px;"></div>
+											<button draggable="false" title="Alejar" aria-label="Alejar" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;">
+												<div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;">
+													<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false" style="position: absolute; left: 0px; top: -15px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;">
+												</div>
+											</button>
+										</div>
+									</div>
+									<div class="gm-svpc" controlwidth="28" controlheight="28" style="background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; width: 28px; height: 28px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: none; position: absolute; left: 0px; top: 0px;">
+										<div style="position: absolute; left: 1px; top: 1px;"></div>
+										<div style="position: absolute; left: 1px; top: 1px;">
+											<div aria-label="Control del hombrecito naranja en Street&nbsp;View" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px;">
+												<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5.png" draggable="false" style="position: absolute; left: -147px; top: -26px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div aria-label="El hombrecito naranja está en la parte superior del mapa" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;">
+												<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5.png" draggable="false" style="position: absolute; left: -147px; top: -52px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+											<div aria-label="Control del hombrecito naranja en Street&nbsp;View" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;">
+												<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5.png" draggable="false" style="position: absolute; left: -147px; top: -78px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+											</div>
+										</div>
+									</div>
+									<div class="gmnoprint" controlwidth="28" controlheight="0" style="display: none; position: absolute;">
+										<div title="Rotar mapa 90 grados" style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; display: none;">
+											<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false" style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+										</div>
+										<div class="gm-tilt" style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; top: 0px; cursor: pointer;">
+											<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false" style="position: absolute; left: -141px; top: -13px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">
+										</div>
+									</div>
+								</div>
+								<div class="gmnoprint" style="margin: 10px; z-index: 0; position: absolute; cursor: pointer; left: 0px; top: 0px;">
+									<div class="gm-style-mtc" style="float: left; position: relative;">
+										<div role="button" tabindex="0" title="Mostrar mapa de calles" aria-label="Mostrar mapa de calles" aria-pressed="true" draggable="false"
+										 style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; background-clip: padding-box; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; min-width: 28px; font-weight: 500;">Mapa</div>
+										<div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; position: absolute; left: 0px; top: 29px; text-align: left; display: none;">
+											<div draggable="false" title="Mostrar mapa de calles con relieve" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;">
+												<span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;">
+													<div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;">
+														<img alt="" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;">
+													</div>
+												</span>
+												<label style="vertical-align: middle; cursor: pointer;">Relieve</label>
+											</div>
+										</div>
+									</div>
+									<div class="gm-style-mtc" style="float: left; position: relative;">
+										<div role="button" tabindex="0" title="Mostrar imágenes satelitales" aria-label="Mostrar imágenes satelitales" aria-pressed="false"
+										 draggable="false" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(86, 86, 86); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-clip: padding-box; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; min-width: 37px; border-left: 0px;">Satélite</div>
+										<div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; position: absolute; right: 0px; top: 29px; text-align: left; display: none;">
+											<div draggable="false" title="Mostrar imágenes con nombres de calles" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;">
+												<span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;">
+													<div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;">
+														<img alt="" src="https://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;">
+													</div>
+												</span>
+												<label style="vertical-align: middle; cursor: pointer;">Etiquetas</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="hidden-xs hidden-sm">
+						<!-- ngIf: showInfo -->
+					</div>
+
+
+					<!--====================== FOR MOBILE DEVICES ====================== -->
+					<div class="hidden-md hidden-lg">
+
+						<!-- ngIf: showInfo -->
+					</div>
+
+
+					<form id="reservaConsigna" method="POST" action="https://www.keepiz.com/es/pedido" class="ng-pristine ng-valid">
+						<input type="hidden" name="_token" value="6w15L6bbvzh6TdShW01awkX8HJFGrlm4G11oRFzw" autocomplete="off">
+						<input ng-value="locker.id_locker" id="idLocker" type="hidden" name="idLocker" autocomplete="off">
+						<input ng-value="locker.id_pedido" id="idPedido" type="hidden" name="idPedido" autocomplete="off">
+						<input ng-value="locker.code_locker" id="codeLocker" type="hidden" name="codeLocker" autocomplete="off">
+						<input ng-value="locker.drop_keeper_name" id="drop_keeper_name" type="hidden" name="drop_keeper_name" autocomplete="off">
+						<input ng-value="locker.drop_keeper_address" id="drop_keeper_address" type="hidden" name="drop_keeper_address" autocomplete="off">
+						<input ng-value="locker.drop_keeper_location_lat" id="drop_keeper_location_lat" type="hidden" name="drop_keeper_location_lat"
+						 autocomplete="off">
+						<input ng-value="locker.drop_keeper_location_long" id="drop_keeper_location_long" type="hidden" name="drop_keeper_location_long"
+						 autocomplete="off">
+						<input ng-value="locker.pick_keeper_name" id="pick_keeper_name" type="hidden" name="pick_keeper_name" autocomplete="off">
+						<input ng-value="locker.pick_keeper_address" id="pick_keeper_address" type="hidden" name="pick_keeper_address" autocomplete="off">
+						<input ng-value="locker.pick_keeper_location_lat" id="pick_keeper_location_lat" type="hidden" name="pick_keeper_location_lat"
+						 autocomplete="off">
+						<input ng-value="locker.pick_keeper_location_long" id="pick_keeper_location_long" type="hidden" name="pick_keeper_location_long"
+						 autocomplete="off">
+						<input ng-value="locker.fecha_entrega" id="fechaEntrega" type="hidden" name="fecha-entrega" autocomplete="off">
+						<input ng-value="locker.fecha_recogida" id="fechaRecogida" type="hidden" name="fecha-recogida" autocomplete="off">
+						<input ng-value="locker.nbultos" id="nbultos" type="hidden" name="nbultos" autocomplete="off">
+						<input ng-value="locker.id_locker_recogida" id="idLocker_recogida" type="hidden" name="idLockerRecogida" autocomplete="off">
+						<input ng-value="locker.id_locker_entrega" id="idLocker_entrega" type="hidden" name="idLockerEntrega" autocomplete="off">
+					</form>
+				</div>
+
+				<!-- LEGEND -->
+				<div class=" text-rightlegend">
+					<div class="col-md-12 mt-20">
+						<div class="mr-20 map-legend">
+							<img src="https://www.keepiz.com/img/banderita-recta-derecha.png" alt="bandera roja"> Keeper disponible
+						</div>
+
+						<div class="map-legend">
+							<img src="https://www.keepiz.com/img/bandera-gris.png" alt="bandera roja"> Keeper cerrado o completo
+						</div>
+					</div>
+				</div>
+				<!-- END LEGEND -->
+			</consigna-map>
+
+		</div>
+		<div ng-controller="POICtrl" ng-init="init('madrid')" class="mt-50 text-center ng-scope lugaresrecomendados">
+			<div class=" text-centerzonasrec ">Zonas recomendadas</div>
+
+			<div class="row centered-poi">
+				<!-- ngRepeat: poi in points_of_interest -->
+				<div ng-repeat="poi in points_of_interest" ng-class="{'col-md-3': points_of_interest.length % 4 == 0}" class="col-sm-4 mb-30 ng-scope col-md-3">
+					<a href="https://www.keepiz.com/es/consigna-madrid/estacion-de-atocha" class="ng-binding">
+						<div class="square-thumb">
+							<img src="imagenesCeyennes/coyoacan.jpg" alt="Coyoacan">
+						</div>
+						Coyoacan
+					</a>
+				</div>
+				<!-- end ngRepeat: poi in points_of_interest -->
+				<div ng-repeat="poi in points_of_interest" ng-class="{'col-md-3': points_of_interest.length % 4 == 0}" class="col-sm-4 mb-30 ng-scope col-md-3">
+					<a href="https://www.keepiz.com/es/consigna-madrid/puerta-del-sol" class="ng-binding">
+						<div class="square-thumb">
+							<img src="imagenesCeyennes/museosoumaya.jpg" alt="Puerta del Sol">
+						</div>
+						Moseo Souyama
+					</a>
+				</div>
+				<!-- end ngRepeat: poi in points_of_interest -->
+				<div ng-repeat="poi in points_of_interest" ng-class="{'col-md-3': points_of_interest.length % 4 == 0}" class="col-sm-4 mb-30 ng-scope col-md-3">
+					<a href="https://www.keepiz.com/es/consigna-madrid/malasaña" class="ng-binding">
+						<div class="square-thumb">
+							<img src="imagenesCeyennes/castillochapultepec.jpg" alt="Malasaña">
+						</div>
+						Castillo de chapultepec
+					</a>
+				</div>
+				<!-- end ngRepeat: poi in points_of_interest -->
+				<div ng-repeat="poi in points_of_interest" ng-class="{'col-md-3': points_of_interest.length % 4 == 0}" class="col-sm-4 mb-30 ng-scope col-md-3">
+					<a href="https://www.keepiz.com/es/consigna-madrid/plaza-mayor" class="ng-binding">
+						<div class="square-thumb">
+							<img src="imagenesCeyennes/zocalo.jpg" alt="Plaza Mayor">
+						</div>
+						Zocalo y alrededores
+					</a>
+				</div>
+				<!-- end ngRepeat: poi in points_of_interest -->
+				<div ng-repeat="poi in points_of_interest" ng-class="{'col-md-3': points_of_interest.length % 4 == 0}" class="col-sm-4 mb-30 ng-scope col-md-3">
+					<a href="https://www.keepiz.com/es/consigna-madrid/lavapies" class="ng-binding">
+						<div class="square-thumb">
+							<img src="imagenesCeyennes/monumentoalarevolucion.jpg" alt="Lavapiés">
+						</div>
+						Monumento a la revolucion
+					</a>
+				</div>
+				<!-- end ngRepeat: poi in points_of_interest -->
+				<div ng-repeat="poi in points_of_interest" ng-class="{'col-md-3': points_of_interest.length % 4 == 0}" class="col-sm-4 mb-30 ng-scope col-md-3">
+					<a href="https://www.keepiz.com/es/consigna-madrid/huertas" class="ng-binding">
+						<div class="square-thumb">
+							<img src="imagenesCeyennes/museoantropologia.jpg" alt="Huertas">
+						</div>
+						Museo de antropologia e historia
+					</a>
+				</div>
+				<!-- end ngRepeat: poi in points_of_interest -->
+				<div ng-repeat="poi in points_of_interest" ng-class="{'col-md-3': points_of_interest.length % 4 == 0}" class="col-sm-4 mb-30 ng-scope col-md-3">
+					<a href="https://www.keepiz.com/es/consigna-madrid/la-latina" class="ng-binding">
+						<div class="square-thumb">
+							<img src="imagenesCeyennes/museofrida.jpg" alt="La Latina">
+						</div>
+						Museo de Frida Kalho
+					</a>
+				</div>
+				<!-- end ngRepeat: poi in points_of_interest -->
+				<div ng-repeat="poi in points_of_interest" ng-class="{'col-md-3': points_of_interest.length % 4 == 0}" class="col-sm-4 mb-30 ng-scope col-md-3">
+					<a href="https://www.keepiz.com/es/consigna-madrid/parque-del-retiro" class="ng-binding">
+						<div class="square-thumb">
+							<img src="imagenesCeyennes/palaciobellasartes.jpg" alt="Parque del Retiro">
+						</div>
+						Palacio de bellas artes
+					</a>
+				</div>
+				<!-- end ngRepeat: poi in points_of_interest -->
+			</div>
+		</div>
+		<div class="col-md-12 preguntas">
+			<p class="prices fs-40 text-center">PREGUNTAS FRECUENTES</p>
+
+			<button class="accordion">¿Cómo hago un pedido de consigna de equipaje? ¿Cómo se hacen los pedidos de largo plazo con la consigna móvil?</button>
+			<div class="panel">
+				<p>Para un pedido de consigna de barrio, hay que seleccionar el número de bultos que se quieren dejar en consigna, la fecha
+					y hora de entrega de las maletas, así como la fecha y hora de recogida. Una vez rellenados los criterios del pedido,
+					se elige cualquier consigna que aparezca con una bandera roja en el mapa de la ciudad. Las consignas que aparecen en
+					gris no están disponibles, puede que estén cerradas por vacaciones, que estén completas, o que no estén abiertas en
+					el horario deseado. Cada Keeper tiene su propio horario comercial, visible en su perfil de Keeper, y será este horario
+					el que se usará para prestar el servicio de consigna. Contamos con Keepers con horarios de mañana y tarde, y 24 horas.</p>
+				<p>Para un pedido de consigna móvil, el proceso es muy similar pero hay que seleccionar un Keeper A para la entrega de las
+					maletas, y luego otro Keeper B para la recogida. El Keeper de entrega y el de recogida pueden ser el mismo, en el caso
+					de pedidos de consigna a largo plazo por ejemplo. Una vez hecho el pedido, nuestro equipo de repartidores irá de inmediato
+					a recoger los bultos en el Keeper de entrega, los almacenaremos durante el tiempo necesario en nuestras taquillas y
+					lockers de maletas (en nuestras instalaciones de Madrid), y los devolveremos a la consigna de recogida unas horas antes
+					de la hora prevista (por si llegarás antes a recogerlos).</p>
+			</div>
+
+			<button class="accordion">¿Puedo dejar mi equipaje en el Aeropuerto de Madrid? ¿Hay posibilidad de contratar un servicio de traslado de las maletas
+				al aeropuerto?</button>
+			<div class="panel">
+				<p>Por supuesto que sí, con el servicio de consigna móvil de Keepiz podrás dejar tus maletas en las consignas oficiales
+					del aeropuerto, y recogerlas directamente en el centro. O del centro hacia el aeropuerto para disfrutar al máximo del
+					último día de vacaciones.</p>
+				<p>Y no te preocupes por el horario, ya que contarás con un servicio 24 horas los 7 días de la semana para guardar tu equipaje
+					en una de nuestras consignas en el Aeropuerto de Barajas. Trabajamos con el servicio oficial de guarda equipaje del
+					aeropuerto de Madrid, operado por la empresa de lockers Excess Baggage Company. </p>
+			</div>
+
+			<button class="accordion">¿Tengo que recoger mi maleta en la misma consigna dónde la dejé?</button>
+			<div class="panel">
+				<p>Como ya sabes, uno de nuestros servicios es la consigna móvil. Puedes dejar tus bultos en un Keeper A, y podrás recogerlos
+					en el Keeper B que elijas.</p>
+				<p>Por ejemplo, puedes dejar tus maletas en una de nuestras consignas en Madrid centro, y comunicarnos que quieres recogerlas
+					en un Keeper cerca de la estación de Atocha. Nosotros nos encargamos de todo, tú solo tendrás que preocuparte de disfrutar
+					de tu tiempo libre sin equipaje.</p>
+			</div>
+
+			<button class="accordion">¿Es seguro dejar mi equipaje en consigna con Keepiz?</button>
+			<div class="panel">
+				<p>La seguridad es nuestra gran prioridad. Trabajamos con un seguro de AXA y seleccionamos nosotros mismos todos los Keepers
+					según unos criterios de seguridad y de limpieza muy estrictos: zona vigilada y con alarma, almacén cerrado al público,
+					área específicamente dedicada al almacenamiento de maletas, etc. Además, recibimos constantemente feedback de nuestros
+					usuarios que valoran su experiencia con su Keeper para poder reaccionar a tiempo si algún Keeper no respectase nuestras
+					condiciones de seguridad y calidad en el servicio prestado.</p>
+				<p>Cada bulto lleva una identificación con el nombre y apellido de la persona que haya hecho la reserva, el nombre y apellido
+					de la persona que lo vaya a recoger (solo si es diferente del de la reserva) y el número de pedido que te haya generado
+					Keepiz. Solo podrás recuperar tus bultos al enseñar un documento de identidad y un número de pedido que corresponda
+					con tu reserva.</p>
+				<p>El Keeper tiene derecho a pedir revisar un bulto para asegurarse de que el contenido no sea ilícito, ni peligroso, ni
+					contrario a las condiciones de Keepiz.</p>
+			</div>
+
+			<button class="accordion">¿Cuánto cuesta el servicio de consigna de maletas de Keepiz?</button>
+			<div class="panel ng-scope" ng-controller="PricesCtrl">
+				Nuestras tarifas son muy sencillas y están pensadas para ajustarse y adaptarse a tus necesidades. Todas nuestras tarifas
+				incluyen IVA, seguro y comisiones: lo que ves es lo que pagarás ¡no hay sorpresas!
+				<br>
+				<!-- CONSIGNA DE BARRIO -->
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 mh-20">
+					<div class="prices-conditions">
+						<h3 class="fs-30 bold text-center">Consigna de barrio</h3>
+
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ph-20">
+							<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+								<p>de 1 a 3 bultos</p>
+
+							</div>
+							<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+								<p class="f-grey bold ng-binding">5€/día</p>
+							</div>
+						</div>
+
+
+						<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 border-top ph-20">
+							<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+								<p>de 4 a 6 bultos</p>
+								<p></p>
+							</div>
+							<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+								<p class="f-grey bold ng-binding">4€/día</p>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 border-top ph-20">
+							<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+								<p>a partir de 7 bultos</p>
+								<p class="fs-14">precio por bulto y un máximo de 8 días
+								</p>
+							</div>
+							<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+								<p class="f-grey bold ng-binding">3,50€/día</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- CONSIGNA MOVIL -->
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 mh-20">
+					<div class="prices-conditions">
+						<h3 class="fs-30 bold text-center">Consigna móvil</h3>
+
+						<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 ph-20">
+							<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+								<p>Precio del servicio</p>
+								<p class="fs-14">para el primer bulto</p>
+							</div>
+							<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+								<p class="f-grey bold ng-binding">15€</p>
+							</div>
+						</div>
+
+
+						<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 border-top ph-20">
+							<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+								<p>Bulto adicional</p>
+							</div>
+							<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+								<p class="f-grey bold ng-binding">+5€/bulto</p>
+							</div>
+						</div>
+
+
+						<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 border-top ph-20">
+							<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+								<p>Recogida dia(s)
+									<br>siguiente(s)</p>
+							</div>
+							<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+								<p class="f-grey bold ng-binding">+1€
+									<br>día/bulto</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="descargar-app">
+					<img alt="Ayuda Keepiz" class="f-left" src="https://www.keepiz.com/img/hand.png">
+					<p class="flexible-text text-left">Somos flexibles: en el caso de las bolsas de tus compras, de bolsos pequeños o de otros objetos pequeños: si nos caben
+						en una mano sin problemas ¡cuentan como un solo bulto!.</p>
+				</div>
+
+			</div>
+
+			<button class="accordion">¿Puede ir otra persona a recoger el bulto que he dejado en consigna?</button>
+			<div class="panel">
+				<p>Sí, en el momento de confirmar tu pedido, existe la opción de poder elegir a otra persona para que vaya a recoger el
+					pedido. Simplemente hay que rellenar su nombre y apellido para que el Keeper le puede pedir un documento de identidad
+					y asegurarse de que se trata de la persona responsable de la recogida. Acuérdate también de pasarle la referencia de
+					tu pedido (o “número de pedido”), para que se lo pueda pedir a la consigna de recogida. Es una opción perfecta para
+					dejar unas llaves a una visita o a unos inquilinos de airbnb, o mandar un bulto a un amigo con un horario flexible</p>
+			</div>
+
+			<button class="accordion">¿Puedo cancelar un pedido ya pagado?</button>
+			<div class="panel">
+				<p>Sí, siempre podrás cancelar un pedido desde la página web o la app de Keepiz (en la parte de gestión y seguimiento de
+					pedidos). Si lo cancelas dentro de un margen de 2 hora después del inicio de tu consigna, tu reserva te será plenamente
+					rembolsada. Si cancelas tu reserva después, no podremos proceder al rembolso del pago ya emitido.</p>
+				<p>Si es el Keeper quien te cancela la reserva cuando te presentes allí, también te será plenamente rembolsada y podrás
+					elegir otro Keeper cercano para hacer otra reserva.</p>
+			</div>
+
+			<button class="accordion">¿Dónde puedo encontrar consignas en Madrid? ¿Dónde tiene Keepiz sus lockers en Madrid?</button>
+			<div class="panel">
+				Puedes hacer uso de nuestras consignas en Madrid Centro en las siguientes localizaciones:
+				<ul>
+					<li>Sol</li>
+					<li>Plaza Mayor</li>
+					<li>Palacio Real</li>
+					<li>Malasaña</li>
+					<li>La Latina</li>
+					<li>Huertas</li>
+					<li>Chueca</li>
+					<li>Lavapiés</li>
+					<li>Atocha</li>
+				</ul>
+				Y si no buscas consignas en el centro de Madrid, sino dejar tu equipaje en los alrededores, también puedes contar con nosotros
+				y encontrar un sitio donde guardar las maletas en:
+				<ul>
+					<li>El Retiro</li>
+					<li>Salamanca</li>
+					<li>Chamberí</li>
+					<li>Chamartín</li>
+				</ul>
+			</div>
+
+			<button class="accordion">¿Disponéis de consignas en la Estación de Atocha?</button>
+			<div class="panel">
+				Sí, a menos de 100 metros podrás encontrar tu Keeper a la salida de la Estación de Madrid Atocha. Ya no tendrás que preocuparte
+				por cargar con tu equipaje o con largas esperas en las consignas tradicionales en la Estación de Atocha. Con la solución
+				de guarda equipaje de Keepiz en Madrid: deja tus maletas sin colas y sin las limitaciones de las taquillas o de los lockers
+				de equipaje.
+			</div>
+
+			<button class="accordion">¿Hay consignas para dejar mi equipaje en cualquier estación de metro?</button>
+			<div class="panel">
+				Cubrimos toda el área del centro de Madrid, así que puedes estar tranquilo y confiar en nosotros. Encontrarás Keepers a pocos
+				metros de todas las estaciones de metro de Madrid.
+				<ul>
+					<li>Ópera</li>
+					<li>Gran Vía</li>
+					<li>Plaza de España</li>
+					<li>Santo Domingo</li>
+					<li>Sevilla</li>
+					<li>Tribunal</li>
+					<li>Chueca</li>
+					<li>Antón Martín</li>
+				</ul> Y muchas más
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<div class="row rowfooter">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-left">
+						<p>
+							<a href="https://www.keepiz.com/es/ser-keeper">
+								<small>Acceso a perfil o inscripción de comercios.</small>
+							</a>
+						</p>
+						<p>
+							<a href="https://www.keepiz.com/docs/condiciones-de-uso-keepiz.pdf" target="_blank">
+								<small>Términos de uso.</small>
+							</a>
+						</p>
+						<p>
+							<a href="https://www.keepiz.com/docs/politica-privacidad-keepiz.pdf" target="_blank">
+								<small>Política de privacidad.</small>
+							</a>
+						</p>
+						<p>
+							<a href="https://www.keepiz.com/docs/politica-cookies-keepiz.pdf" target="_blank">
+								<small>Cookies</small>
+							</a>
+						</p>
+					</div>
+
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+						<img src="imagenesCeyennes/logo3_3.png">
+					</div>
+
+					<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 last">
+						<div class="col-xs-3 col-sm-3 col-md-12 col-lg-12 col-xl-12">
+							<p>
+								<a href="http://blog.keepiz.com/" target="_blank">
+									<small>Blog</small>
+								</a>
+							</p>
+						</div>
+
+						<div class="col-xs-3 col-sm-3 col-md-12 col-lg-12 col-xl-12">
+							<p>
+								<a href="https://www.keepiz.com/es/contacto">
+									<small>Contacto</small>
+								</a>
+							</p>
+						</div>
+
+						<div class="col-xs-3 col-sm-3 col-md-12 col-lg-12 col-xl-12">
+							<p>
+								<a href="https://www.keepiz.com/es/faq">
+									<small>FAQ</small>
+								</a>
+							</p>
+						</div>
+
+						<div class="col-xs-3 col-sm-3 col-md-12 col-lg-12 col-xl-12">
+							<p>
+								<a href="https://www.keepiz.com/#references">
+									<small>Prensa</small>
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+	</div>
+
+
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaGrZVuvOd3kJ9upou3MC-JnUNw9Dc0rk&callback=initMap">
+	</script>
+	<script src="js/index.js"></script>
+
+</body>
+
+</html>

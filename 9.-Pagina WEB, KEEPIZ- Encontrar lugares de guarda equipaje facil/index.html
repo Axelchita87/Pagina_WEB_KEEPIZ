@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="contenedor-body">
+
+
+		<header>
+
+			<div class="contenedor-header">
+
+				<div class="header-logo">
+
+					<a href="index.html">
+
+						<img src="imagenesCeyennes/logo3_3.png" class="logo" alt="logo Keepiz"> </a>
+				</div>
+
+				<nav>
+
+					<div class="contenedornav">
+
+						<div class="dropdown">
+
+							<button class="dropbtnacerca" onclick="myFunction()">Acerca de Keepiz
+								<i class="fa fa-caret-down"></i>
+
+								<span class="caret"></span>
+							</button>
+
+							<div class="dropdown-content" id="myDropdown1">
+
+								<a href="#idcomofunciona">Como funciona?</a>
+
+								<a href="#prices-conditions">Precios y condiciones</a>
+
+								<a href="#">Descarga la app</a>
+
+								<a href="#">Contacto</a>
+
+								<a href="#">FAQ</a>
+							</div>
+						</div>
+
+
+						<div class="dropdown">
+
+							<button class="dropbtnbuscar" onclick="myFunction()">Buscar consigna
+								<i class="fa fa-caret-down"></i>
+
+								<span class="caret"></span>
+							</button>
+
+							<div class="dropdown-content" id="myDropdown2">
+
+								<a href="#">Consigna de barrio</a>
+
+								<a href="#">Consigna movil</a>
+							</div>
+						</div>
+
+						<div class="dropdown">
+
+							<button class="dropbtnperfil" onclick="myFunction()">Perfil de usuario
+								<i class="fa fa-caret-down"></i>
+
+								<span class="caret"></span>
+							</button>
+
+							<div class="dropdown-content" id="myDropdown3">
+
+								<a href="#">Iniciar secion</a>
+							</div>
+						</div>
+
+						<div class="dropdown">
+
+							<button class="dropbtnacceso" href="#" onclick="myFunction()">Keeper
+								<i class="fa fa-caret-down"></i>
+							</button>
+						</div>
+
+						<div class="dropdown">
+
+							<button class="dropbtnservicios" href="#" onclick="myFunction()">Servicios extra
+								<i class="fa fa-caret-down"></i>
+							</button>
+						</div>
+
+						<div class="dropdown">
+
+							<button class="dropbtnidioma" onclick="myFunction()">
+
+								<img src=" ../imagenesCeyennes/estadosunidos.png" alt="">
+								<span class="caret"></span>
+							</button>
+
+
+							<div class="dropdown-content" id="myDropdown4">
+
+								<a href="#">Consigna de barrio</a>
+
+								<a href="#">Consigna movil</a>
+							</div>
+						</div>
+
+					</div>
+				</nav>
+			</div>
+
+			<div class="hero">
+
+			</div>
+		</header>
+
+
+		<div class="contenedorhome" id="idhome">
+
+			<div class="contenedorh1consigna">
+
+				<h1 class="fs-50 title-home bold">
+
+					<b>LUGARES DE EQUIPAJE DONDE GUARDAR MALETAS CERCA DE TI</b>
+				</h1>
+
+				<div class="subtitle-home">
+
+					<b> ! DEJA TUS BULTOS Y DISFRUTA DE TU LIBERTAD !</b>
+				</div>
+			</div>
+
+			<div class="row form-home ng-scope" ng-controller="MainSearchCtrl">
+
+				<form action="https://www.keepiz.com/es/consignas-barrio" ng-submit="searchCity()" name="mainSearch" class="ng-pristine ng-valid">
+
+					<input type="text" id="addressHome" class="input-home ng-pristine ng-untouched ng-valid ng-empty" size="100" placeholder="Ubicación, dirección, monumento, CP..."
+					                      value="" name="mainSearch" autocomplete="off" ng-model="chosenPlace" googleplace="">
+					<br>
+					<input type="submit" class="btn-yellow text-uppercase min-w-150" value="BUSCAR">
+				</form>
+
+				<div class="hidden-xs col-sm-12 back-home-image">
+
+					<img class="route-line-img" src="https://www.keepiz.com/img/linea-fondo.png" alt="Keepiz Ruta">
+				</div>
+			</div>
+			<div class="subtitle-home-cities">
+				<b>CIUDADES DONDE PUEDES ENCONTRAR KEEPIZ:</b>
+			</div>
+			<div id="cities-lit" ng-controller="CitiesListCtrl" class="ng-scope">
+				<div class="rowcity">
+					<div class="containercity  hover-city">
+						<a href="subpagina.html">
+							<img class="image_on" src="imagenesCeyennes/logo-ciudad-de-mexico.png" alt="Ciudad de Mexico">
+							<img class="image_off" src="https://www.keepiz.com/img/logo-ciudad-de-mexico.png" alt="Ciudad de Mexico">
+						</a>
+					</div>			
+				</div>
+			</div>
+		</div>
+
+
+		<div class="contenedorcomofunciona" id="idcomofunciona">
+
+			<div class="contenedorgeneral">
+
+				<p class="fs-40 keep-yellow text-center">COMO FUNCIONA</p>
+
+				<p>Ofrecemos servicios de consigna de bultos a través de nuestros increíbles Keepers. Los Keepers son tiendas, hoteles o
+					cafeterías que tienen un espacio seguro para guardar tus maletas y demás bultos. Descúbrelos, tienen mucho más que aportarte:
+					consejos turísticos, ofertas y descuentos especiales, enchufes, wifi, etc.</p>
+
+				<iframe height="500px" src="https://www.youtube.com/embed/u6sDh4sD23I" allowfullscreen="" class="home-video"></iframe>
+
+				<div class="rowcol-sm-12">
+
+					<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-50 text-center">
+
+						<p>
+
+							<img alt="Nube Keepiz" src="https://www.keepiz.com/img/nube1.png">
+						</p>
+
+						<p>Consigna de barrio</p>
+
+						<p>
+
+							<i class="consigna-subtitle">Encuentra nuestra consigna más cercana
+								<br>para dejar tus maletas o bultos</i>
+						</p>
+
+
+						<img alt="Consigna Barrio Keepiz" class="h-auto w-300" src="https://www.keepiz.com/img/c-barrio.png">
+
+						<br>
+						<a href="https://www.keepiz.com/es/consignas-barrio">
+
+							<button class="btn-yellow">BUSCAR</button>
+						</a>
+					</div>
+
+					<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-50 text-center">
+
+						<p>
+
+							<img alt="Nube Keepiz" src="https://www.keepiz.com/img/nube2.png">
+						</p>
+
+						<p>Consigna móvil</p>
+
+						<p>
+
+							<i class="consigna-subtitle">Te llevamos tus bultos de un punto
+								<br>a otro, incluido el aeropuerto</i>
+						</p>
+
+
+						<img alt="Consigna Movil Keepiz" class="h-auto w-300" src="https://www.keepiz.com/img/c-movil.png">
+
+						<br>
+						<a href="https://www.keepiz.com/es/consignas-movil-madrid">
+
+							<button class="btn-yellow">BUSCAR</button>
+						</a>
+					</div>
+				</div>
+
+				<div class="mt-30 text-left" id="precio-condicion">
+
+					<b>Truco experto:</b> puedes dejar un bulto y elegir a otra persona para ir a recogerlo en el Keeper de tu elección. Es
+					 una opción perfecta para dejar unas llaves a una visita o a inquilinos, o mandar un bulto a un amigo con un horario
+					 flexible.
+				</div>
+			</div>
+		</div>
+		<div class="row blue-block">
+
+
+			<div id="prices-conditions" ng-controller="PricesCtrl" class="ng-scope">
+
+
+				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+
+					<div class="text-center">
+
+
+						<p class="prices fs-40 ">PRECIOS Y CONDICIONES</p>
+
+
+						<div class="contenedorcol-md-4">
+
+
+							<div class="col-sm-12 col-md-4 mb-50">
+
+
+								<img src="https://www.keepiz.com/img/shop.png" alt="" class="mb-20 img-prices">
+								<ul>
+
+
+									<li>Keepers seleccionados para garantizarte el 100% de seguridad y disponibilidad en su horario comercial.</li>
+
+
+									<li>Siempre localizables por dirección, mapa y datos de contacto (mail y/o teléfono).</li>
+								</ul>
+							</div>
+
+
+							<div class="col-sm-12 col-md-4 mb-50">
+
+
+								<img src="https://www.keepiz.com/img/bag-axa.png" alt="" class="mb-20 img-prices">
+								<ul>
+
+
+									<li>Maletas y bultos siempre seguros en sitios aptos para el depósito y control de bultos en consigna.</li>
+
+
+									<li>Bultos sellados e identificados con los datos de tu reserva: nº de bultos, persona de contacto, nº de pedido, etc.</li>
+								</ul>
+							</div>
+
+
+							<div class="col-sm-12 col-md-4 mb-50">
+
+
+								<img src="https://www.keepiz.com/img/ccard.png" alt="" class="mb-20 img-prices">
+								<ul>
+
+
+									<li>Pago seguro a través de nuestro proveedor especializado en la gestión y protección de los pagos online: MangoPay.</li>
+
+
+									<li>Pagos muy fáciles, rápidos y transparentes con cualquier tipo de tarjeta..</li>
+								</ul>
+							</div>
+						</div>
+
+
+						<div class="contenedormh-20">
+
+
+							<!-- CONSIGNA DE BARRIO -->
+
+
+							<div class="col-xs-12 col-sm-6 col-md-6  col-xl-6 mh-20 barrio">
+
+
+								<div class="prices-conditions">
+
+
+									<h3 class="fs-30 bold">Consigna de barrio</h3>
+
+
+									<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 ph-20">
+
+
+										<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+
+
+											<p>de 1 a 3 bultos</p>
+
+										</div>
+
+
+										<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+
+
+											<p class="f-grey bold ng-binding">5€/día</p>
+										</div>
+									</div>
+
+
+									<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 border-top ph-20">
+
+
+										<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+
+
+											<p>de 4 a 6 bultos</p>
+
+
+											<p></p>
+										</div>
+
+
+										<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+
+
+											<p class="f-grey bold ng-binding">4€/día</p>
+										</div>
+									</div>
+
+
+									<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 border-top ph-20">
+
+
+										<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+
+
+											<p>a partir de 7 bultos</p>
+
+
+											<p class="fs-14">precio por bulto y un máximo de 8 días
+											</p>
+										</div>
+
+
+										<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+
+
+											<p class="f-grey bold ng-binding">3,50€/día</p>
+										</div>
+									</div>
+								</div>
+
+
+								<a href="https://www.keepiz.com/es/consignas-barrio">
+
+
+									<button class="btn-yellow mobile-mb-50">BUSCAR</button>
+								</a>
+							</div>
+
+
+							<!-- CONSIGNA MOVIL -->
+
+
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 mh-20 movil">
+
+
+								<div class="prices-conditions">
+
+
+									<h3 class="fs-30 bold">Consigna móvil</h3>
+
+
+									<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 ph-20">
+
+
+										<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+
+
+											<p>Precio del servicio</p>
+
+
+											<p class="fs-14">para el primer bulto</p>
+										</div>
+
+
+										<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+
+
+											<p class="f-grey bold ng-binding">15€</p>
+										</div>
+									</div>
+
+
+									<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 border-top ph-20">
+
+
+										<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+
+
+											<p>Bulto adicional</p>
+										</div>
+
+
+										<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+
+
+											<p class="f-grey bold ng-binding">+5€/bulto</p>
+										</div>
+									</div>
+
+
+									<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 border-top ph-20">
+
+
+										<div class="col-xs-7 col-md-7 col-lg-7 col-xl-7 text-left">
+
+
+											<p>Recogida dia(s)
+												<br>siguiente(s)</p>
+										</div>
+
+
+										<div class="col-xs-5 col-md-5 col-lg-5 col-xl-5 text-right">
+
+
+											<p class="f-grey bold ng-binding">+1€
+												<br>día/bulto</p>
+										</div>
+									</div>
+
+								</div>
+
+
+								<a href="https://www.keepiz.com/es/consignas-movil-madrid">
+
+
+									<button class="btn-yellow">BUSCAR</button>
+								</a>
+							</div>
+
+						</div>
+
+
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 somosflexibles" id="descargar-app">
+
+
+							<img alt="Ayuda Keepiz" class="f-left" src="https://www.keepiz.com/img/hand.png">
+							<p class="flexible-text text-left">Somos flexibles: en el caso de las bolsas de tus compras, de bolsos pequeños o de otros objetos pequeños: si nos caben
+								 en una mano sin problemas ¡cuentan como un solo bulto!.</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<div class="row rowfooter">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-left">
+						<p>
+							<a href="https://www.keepiz.com/es/ser-keeper">
+								<small>Acceso a perfil o inscripción de comercios.</small>
+							</a>
+						</p>
+						<p>
+							<a href="https://www.keepiz.com/docs/condiciones-de-uso-keepiz.pdf" target="_blank">
+								<small>Términos de uso.</small>
+							</a>
+						</p>
+						<p>
+							<a href="https://www.keepiz.com/docs/politica-privacidad-keepiz.pdf" target="_blank">
+								<small>Política de privacidad.</small>
+							</a>
+						</p>
+						<p>
+							<a href="https://www.keepiz.com/docs/politica-cookies-keepiz.pdf" target="_blank">
+								<small>Cookies</small>
+							</a>
+						</p>
+					</div>
+
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+						<img src="imagenesCeyennes/logo3_3.png">
+					</div>
+
+					<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 last">
+						<div class="col-xs-3 col-sm-3 col-md-12 col-lg-12 col-xl-12">
+							<p>
+								<a href="http://blog.keepiz.com/" target="_blank">
+									<small>Blog</small>
+								</a>
+							</p>
+						</div>
+
+						<div class="col-xs-3 col-sm-3 col-md-12 col-lg-12 col-xl-12">
+							<p>
+								<a href="https://www.keepiz.com/es/contacto">
+									<small>Contacto</small>
+								</a>
+							</p>
+						</div>
+
+						<div class="col-xs-3 col-sm-3 col-md-12 col-lg-12 col-xl-12">
+							<p>
+								<a href="https://www.keepiz.com/es/faq">
+									<small>FAQ</small>
+								</a>
+							</p>
+						</div>
+
+						<div class="col-xs-3 col-sm-3 col-md-12 col-lg-12 col-xl-12">
+							<p>
+								<a href="https://www.keepiz.com/#references">
+									<small>Prensa</small>
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+	</div>
+
+
+	<script src="js/index.js"></script>
+
+</body>
+
+</html>
